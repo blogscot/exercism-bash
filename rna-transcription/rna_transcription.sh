@@ -3,7 +3,7 @@
 set -o errexit
 set -o nounset
 
-main() {
+function main() {
   
   if [ $# -ne 1 ]
   then

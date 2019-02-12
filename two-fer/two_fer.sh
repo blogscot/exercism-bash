@@ -3,7 +3,7 @@
 set -o errexit
 set -o nounset
 
-main() {
+function main() {
   local name
   if [ $# -eq 0 ]; then
     name='you'
