@@ -21,6 +21,7 @@ function isAnagram() {
 
 function main() {
   if [ $# -ne 2 ]; then
+    echo "Usage: bash anagram.sh <word> <wordlist>"
     exit 1
   fi
   
