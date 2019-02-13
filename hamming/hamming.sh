@@ -11,7 +11,7 @@ function main() {
   fi
   local strand1=$1
   local strand2=$2
-  if [ "${#strand1}" -ne "${#strand2}" ]; then
+  if [ ${#strand1} -ne ${#strand2} ]; then
     echo "left and right strands must be of equal length"
     exit 1
   fi
