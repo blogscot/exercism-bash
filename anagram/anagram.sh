@@ -8,10 +8,10 @@ function isAnagram() {
     echo false
   fi
   
-  l1=$(echo "$word1" | fold -w 1 | sort | uniq -c)
-  l2=$(echo "$word2" | fold -w 1 | sort | uniq -c)
+  u1=$(echo "$word1" | fold -w 1 | sort | uniq -c)
+  u2=$(echo "$word2" | fold -w 1 | sort | uniq -c)
   
-  if [ "$l1" == "$l2" ]
+  if [ "$u1" == "$u2" ]
   then
     echo true
   else
@@ -29,6 +29,7 @@ function main() {
   matches=()
   
   for item in $items; do
+    # check lowercase items
     if [ "$(isAnagram "${match,,}" "${item,,}")" == true ]; then
       matches+=("$item")
     fi
