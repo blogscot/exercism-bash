@@ -3,7 +3,6 @@
 function main() {
   
   text=$(echo -e "$1" | tr -d '!&@$%^\:\n.' | tr ',' ' ')
-  text=$(echo "$text" | tr ' ' '\n' | uniq -u | tr '\n' ' ')
   
   declare -A uniqWords
   
