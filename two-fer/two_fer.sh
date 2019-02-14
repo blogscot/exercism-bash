@@ -4,12 +4,7 @@ set -o errexit
 set -o nounset
 
 function main() {
-  local name
-  if [ $# -eq 0 ]; then
-    name='you'
-  else
-    name=$1
-  fi
+  local name="${1:-you}"
   echo "One for $name, one for me."
 }
 
