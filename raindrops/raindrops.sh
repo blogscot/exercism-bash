@@ -1,23 +1,12 @@
 #!/usr/bin/env bash
 
 function main() {
-  by3=$(($1 % 3))
-  by5=$(($1 % 5))
-  by7=$(($1 % 7))
-  output=""
+  local output=""
   
-  if [ $by3 == 0 ]; then
-    output="Pling"
-  fi
-  if [ $by5 == 0 ]; then
-    output="${output}Plang"
-  fi
-  if [ $by7 == 0 ]; then
-    output="${output}Plong"
-  fi
-  if [ -z $output ]; then
-    output=$1
-  fi
+  [ $(($1 % 3)) == 0 ] && output="Pling"
+  [ $(($1 % 5)) == 0 ] && output="${output}Plang"
+  [ $(($1 % 7)) == 0 ] && output="${output}Plong"
+  [ -z $output ] && output=$1
   
   echo "$output"
 }
