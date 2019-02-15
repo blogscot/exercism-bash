@@ -24,7 +24,7 @@ function isSilent() {
   local text
   text=$(echo -e "$1" | tr -d '\n\t\r ' )
   
-  if [ ${#text} == 0 ]; then
+  if [ -z "$text" ]; then
     echo true
   else
     echo false
