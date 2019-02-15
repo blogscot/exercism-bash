@@ -33,13 +33,16 @@ function isSilent() {
 
 function main() {
   local text=$1
-  if [ $(isAsking "$text") == true ] && [ $(isShouting "$text") == true ]; then
+  local asking=$(isAsking "$text")
+  local shouting=$(isShouting "$text")
+  
+  if [ $asking == true ] && [ $shouting == true ]; then
     echo "Calm down, I know what I'm doing!"
-    elif [ $(isAsking "$text") == true ]; then
+    elif [ $asking == true ]; then
     echo "Sure."
     elif [ $(isSilent "$text") ==  true ]; then
     echo "Fine. Be that way!"
-    elif [ $(isShouting "$text") == true ]; then
+    elif [ $shouting == true ]; then
     echo "Whoa, chill out!"
   else
     echo "Whatever."
