@@ -13,17 +13,15 @@ function scoreLetter() {
     q|z)                  echo 10;;
     *)                    echo 0;;
   esac
-  
-  
 }
 
 function main() {
   local word=$1
-  local total=0
+  declare -i total=0
   
   for letter in $(echo $word | fold -w 1); do
     score=$(scoreLetter $letter)
-    total=$(("total + score"))
+    total=$((total + score))
   done
   
   echo $total
