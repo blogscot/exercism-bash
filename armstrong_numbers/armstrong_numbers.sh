@@ -4,12 +4,12 @@ set -o errexit
 set -o nounset
 
 function main() {
-  num=$1
-  total=0
+  local num=$1
+  local total=0
   
   for (( i=0 ; i < ${#num} ; i++)); do
     digit=${num:i:1}
-    ans=$(("$digit ** ${#num}"))
+    local ans=$(("$digit ** ${#num}"))
     total=$(("total + $ans"))
   done
   

@@ -2,7 +2,7 @@
 
 function main() {
   
-  text=$(echo -e "$1" | tr -d '!&@$%^\:\n.' | tr ',' ' ')
+  local text=$(echo -e "$1" | tr -d '!&@$%^\:\n.' | tr ',' ' ')
   
   declare -A uniqWords
   

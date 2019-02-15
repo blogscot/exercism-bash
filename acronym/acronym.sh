@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 function main() {
-  text=$(echo $1 | tr '-' ' ')
-  acronym=""
+  local text=$(echo $1 | tr '-' ' ')
+  local acronym=""
   
   for word in $text; do
-    letter=${word:0:1}
+    local letter=${word:0:1}
     acronym+=${letter^^}
   done
   
