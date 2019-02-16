@@ -2,7 +2,7 @@
 
 function main() {
   
-  nonDigits=$(echo $1 | tr -d "[:digit:][:space:]")
+  local nonDigits=$(echo $1 | tr -d "[:digit:][:space:]")
   if test ! -z $nonDigits; then
     echo false
     exit 0
@@ -17,7 +17,7 @@ function main() {
   declare -i total=0
   declare -i value
   for (( i=0 ; i < ${#num} ; i++ )) do
-    digit=${num:i:1}
+    local digit=${num:i:1}
     if test $((i%2)) -eq 1; then
       value=$((digit*2))
       if test $value -gt 9; then
