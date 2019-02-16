@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function main() {
+function square() {
   local square=$1
   [ $square -lt 1 ] || [ $square -gt 64 ] && {
     echo "Error: invalid input"
@@ -13,7 +13,7 @@ function main() {
 function total() {
   declare -i sum=0
   for num in {1..64}; do
-    sum+=$(main "$num")
+    sum+=$(square "$num")
   done
   printf "%u\n" $sum
 }
@@ -21,5 +21,5 @@ function total() {
 if test $1 = "total"; then
   echo $(total)
 else
-  main "$@"
+  square "$@"
 fi
